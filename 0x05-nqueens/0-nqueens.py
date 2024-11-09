@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 import sys
 solution = []
+
+
 def backtrack(queens, row=0):
-    
     if row == int(queens):
         print(solution)
-        return  
+        return
     for j in range(int(queens)):
         candidate = [row, j]
         aligned = False
-        
         for [m, n] in solution:
             if n == j:
                 aligned = True
@@ -17,11 +17,12 @@ def backtrack(queens, row=0):
             if abs(row - m) == abs(j - n):
                 aligned = True
                 break
-        
         if not aligned:
             solution.append(candidate)
-            backtrack(queens, row + 1)  
-            solution.pop() 
+            backtrack(queens, row + 1)
+            solution.pop()
+
+
 if len(sys.argv) < 2:
     print("Usage: nqueens N")
     sys.exit(1)
