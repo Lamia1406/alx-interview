@@ -1,0 +1,1 @@
+This project is about building a program that determines the fewest number of coins needed to meet a given amount total.
